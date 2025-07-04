@@ -1,0 +1,280 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dice Game</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #b61d3b, #c64e8a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .game {
+      width: 800px;
+      background-color: rgba(255, 255, 255, 0.15);
+      display: flex;
+      justify-content: space-between;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .player {
+      flex: 1;
+      padding: 40px;
+      text-align: center;
+    }
+     .player2 {
+      flex: 1;
+      padding: 40px;
+      text-align: center;
+      background-color: #ea9cc3;
+    }
+
+    .score {
+      font-size: 80px;
+      color: #ff3c64;
+    }
+
+    .current-box {
+      background: #d14060;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .center-controls {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .dice {
+      width: 60px;
+      height: 60px;
+      background: white;
+      margin: 10px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      border-radius: 10px;
+    }
+.dice img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      background: white;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .new-game {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="game">
+    <div class="player">
+      <h2>PLAYER 1</h2>
+      <div class="score">0</div>
+      <div class="current-box">
+        <p>CURRENT</p>
+        <p>2</p>
+      </div>
+    </div>
+    <div class="player2">
+      <h2>PLAYER 2</h2>
+      <div class="score">0</div>
+      <div class="current-box">
+        <p>CURRENT</p>
+        <p>0</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="center-controls">
+    <div class="dice">
+  <img src="one.jpg" alt="Dice" />
+</div>
+
+    <button>ROLL DICE</button>
+    <br />
+    <button>HOLD</button>
+  </div>
+
+  <button class="new-game">NEW GAME</button>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dice Game</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #b61d3b, #c64e8a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .game {
+      width: 800px;
+      background-color: rgba(255, 255, 255, 0.15);
+      display: flex;
+      justify-content: space-between;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .player {
+      flex: 1;
+      padding: 40px;
+      text-align: center;
+    }
+     .player2 {
+      flex: 1;
+      padding: 40px;
+      text-align: center;
+      background-color: #ea9cc3;
+    }
+
+    .score {
+      font-size: 80px;
+      color: #ff3c64;
+    }
+
+    .current-box {
+      background: #d14060;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .center-controls {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .dice {
+      width: 60px;
+      height: 60px;
+      background: white;
+      margin: 10px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      border-radius: 10px;
+    }
+    .dice img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      background: white;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .new-game {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="game">
+    <div class="player">
+      <h2>PLAYER 1</h2>
+      <div class="score" id="score-0">0</div>
+      <div class="current-box">
+        <p>CURRENT</p>
+        <p id="current-0">0</p>
+      </div>
+    </div>
+    <div class="player2">
+      <h2>PLAYER 2</h2>
+      <div class="score" id="score-1">0</div>
+      <div class="current-box">
+        <p>CURRENT</p>
+        <p id="current-1">0</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="center-controls">
+    <div class="dice">
+      <img id="dice-img" src="dice-1.jpg" alt="Dice" />
+    </div>
+
+    <button id="roll">ROLL DICE</button>
+    <br />
+    <button id="hold">HOLD</button>
+  </div>
+
+  <button class="new-game" id="new-game">NEW GAME</button>
+
+  <script>
+    const diceImg = document.getElementById('dice-img');
+    const rollBtn = document.getElementById('roll');
+    
+    function rollDice() {
+      const randomNumber = Math.floor(Math.random() * 6) + 1;
+      diceImg.src = `dice-${randomNumber}.jpg`;
+      console.log(`Dice rolled: ${randomNumber}`);
+    }
+    rollBtn.addEventListener('click', rollDice);
+  </script>
+</body>
+</html>  
